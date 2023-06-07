@@ -87,9 +87,14 @@ namespace AdaptationForSlopeTwoPoints
                 trans.Start();
                 foreach (var profile in AdaptiveProfiles)
                 {
-                    XYZ intersectionPoint = RevitGeometryUtils.GetIntersectPoint(Doc, profile, RoadLines1);
-                    ReferencePoint shapeHandlePoint = RevitGeometryUtils.GetShapeHandlePoints(Doc, profile).First();
-                    shapeHandlePoint.Position = intersectionPoint;
+                    XYZ intersectionPoint1 = RevitGeometryUtils.GetIntersectPoint(Doc, profile, RoadLines1);
+                    XYZ intersectionPoint2 = RevitGeometryUtils.GetIntersectPoint(Doc, profile, RoadLines2);
+
+                    ReferencePoint shapeHandlePoint1 = RevitGeometryUtils.GetShapeHandlePoints(Doc, profile).First();
+                    ReferencePoint shapeHandlePoint2 = RevitGeometryUtils.GetShapeHandlePoints(Doc, profile).ElementAt(1);
+
+                    shapeHandlePoint1.Position = intersectionPoint1;
+                    shapeHandlePoint2.Position = intersectionPoint2;
                 }
                 trans.Commit();
             }
