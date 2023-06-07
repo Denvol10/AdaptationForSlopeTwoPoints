@@ -4,7 +4,7 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 
-namespace AdaptationForSlopeOnePoint.Models
+namespace AdaptationForSlopeTwoPoints.Models
 {
     internal class RevitGeometryUtils
     {

@@ -11,9 +11,9 @@ using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.DB.Architecture;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using AdaptationForSlopeOnePoint.Infrastructure;
+using AdaptationForSlopeTwoPoints.Infrastructure;
 
-namespace AdaptationForSlopeOnePoint.ViewModels
+namespace AdaptationForSlopeTwoPoints.ViewModels
 {
     internal class MainWindowViewModel : Base.ViewModel
     {

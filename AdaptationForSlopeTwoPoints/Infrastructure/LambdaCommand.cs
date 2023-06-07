@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AdaptationForSlopeOnePoint.Infrastructure.Base;
+using AdaptationForSlopeTwoPoints.Infrastructure.Base;
 
-namespace AdaptationForSlopeOnePoint.Infrastructure
+namespace AdaptationForSlopeTwoPoints.Infrastructure
 {
     internal class LambdaCommand : Command
     {

@@ -10,10 +10,10 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.DB.Architecture;
 using System.Collections.ObjectModel;
-using AdaptationForSlopeOnePoint.Models;
+using AdaptationForSlopeTwoPoints.Models;
 using System.IO;
 
-namespace AdaptationForSlopeOnePoint
+namespace AdaptationForSlopeTwoPoints
 {
     public class RevitModelForfard
     {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AdaptationForSlopeOnePoint")]
+[assembly: AssemblyTitle("AdaptationForSlopeTwoPoints")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("AdaptationForSlopeOnePoint")]
+[assembly: AssemblyProduct("AdaptationForSlopeTwoPoints")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bbbef323-bd38-4257-af1a-43281edc9f8b")]
+[assembly: Guid("8f25504d-dd9a-40c4-9312-8fe355fdd029")]
 
 // Version information for an assembly consists of the following four values:
 //

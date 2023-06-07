@@ -9,9 +9,9 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
 using Autodesk.Revit.DB.Architecture;
-using AdaptationForSlopeOnePoint.ViewModels;
+using AdaptationForSlopeTwoPoints.ViewModels;
 
-namespace AdaptationForSlopeOnePoint.Models
+namespace AdaptationForSlopeTwoPoints.Models
 {
     internal class GenericModelCategoryFilter : ISelectionFilter
     {

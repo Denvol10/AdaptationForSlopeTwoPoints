@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace AdaptationForSlopeOnePoint.ViewModels.Base
+namespace AdaptationForSlopeTwoPoints.ViewModels.Base
 {
     internal abstract class ViewModel : INotifyPropertyChanged
     {
