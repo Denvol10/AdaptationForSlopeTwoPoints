@@ -26,7 +26,7 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
         }
 
         #region Заголовок
-        private string _title = "Адаптация под уклон 1 точка";
+        private string _title = "Адаптация под уклон 2 точки";
 
         public string Title
         {
@@ -45,13 +45,23 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
         }
         #endregion
 
-        #region Линия на поверхности
+        #region Линия на поверхности 1
         private string _roadLineElemIds1;
 
         public string RoadLineElemIds1
         {
             get => _roadLineElemIds1;
             set => Set(ref _roadLineElemIds1, value);
+        }
+        #endregion
+
+        #region Линия на поверхности 2
+        private string _roadLineElemIds2;
+
+        public string RoadLineElemIds2
+        {
+            get => _roadLineElemIds2;
+            set => Set(ref _roadLineElemIds2, value);
         }
         #endregion
 
@@ -74,10 +84,10 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
         }
         #endregion
 
-        #region Получение линии на поверхности дороги
-        public ICommand GetRoadLine { get; }
+        #region Получение линии 1 на поверхности дороги
+        public ICommand GetRoadLine1Command { get; }
 
-        private void OnGetRoadLineCommandExecuted(object parameter)
+        private void OnGetRoadLine1CommandExecuted(object parameter)
         {
             RevitCommand.mainView.Hide();
             RevitModel.GetRoadLine1();
@@ -85,7 +95,24 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
             RevitCommand.mainView.ShowDialog();
         }
 
-        private bool CanGetRoadLineCommandExecute(object parameter)
+        private bool CanGetRoadLine1CommandExecute(object parameter)
+        {
+            return true;
+        }
+        #endregion
+
+        #region Получение линии 2 на поверхности дороги
+        public ICommand GetRoadLine2Command { get; }
+
+        private void OnGetRoadLine2CommandExecuted(object parameter)
+        {
+            RevitCommand.mainView.Hide();
+            RevitModel.GetRoadLine2();
+            RoadLineElemIds2 = RevitModel.RoadLineElemIds2;
+            RevitCommand.mainView.ShowDialog();
+        }
+
+        private bool CanGetRoadLine2CommandExecute(object parameter)
         {
             return true;
         }
@@ -130,7 +157,8 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
 
             #region Команды
             GetAdaptiveProfiles = new LambdaCommand(OnGetAdaptiveProfilesCommandExecuted, CanGetAdaptiveProfilesCommandExecute);
-            GetRoadLine = new LambdaCommand(OnGetRoadLineCommandExecuted, CanGetRoadLineCommandExecute);
+            GetRoadLine1Command = new LambdaCommand(OnGetRoadLine1CommandExecuted, CanGetRoadLine1CommandExecute);
+            GetRoadLine2Command = new LambdaCommand(OnGetRoadLine2CommandExecuted, CanGetRoadLine2CommandExecute);
             MoveShapeHandlePointCommand = new LambdaCommand(OnMoveShapeHandlePointCommandExecuted, CanMoveShapeHandlePointCommandExecute);
             CloseWindowCommand = new LambdaCommand(OnCloseWindowCommandExecuted, CanCloseWindowCommandExecute);
             #endregion

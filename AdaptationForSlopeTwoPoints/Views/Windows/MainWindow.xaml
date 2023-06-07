@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="{Binding Title}"
         WindowStartupLocation="CenterScreen"
-        Height="245"
+        ResizeMode="NoResize"
+        Height="313"
         Width="350">
     <Window.DataContext>
         <vm:MainWindowViewModel />
@@ -70,15 +71,27 @@
             </UniformGrid>
         </GroupBox>
         <GroupBox Header="Верх покрытия">
-            <UniformGrid Columns="2">
-                <UniformGrid Rows="2">
-                    <TextBlock Text="Линия на поверхности"
-                               Style="{StaticResource TextAboveButton}" />
-                    <Button Style="{StaticResource SelectButton}"
-                            Command="{Binding GetRoadLine}" />
+            <UniformGrid Rows="2">
+                <UniformGrid Columns="2">
+                    <UniformGrid Rows="2">
+                        <TextBlock Text="Линия на поверхности 1"
+                                   Style="{StaticResource TextAboveButton}" />
+                        <Button Style="{StaticResource SelectButton}"
+                                Command="{Binding GetRoadLine1Command}" />
+                    </UniformGrid>
+                    <TextBox Text="{Binding RoadLineElemIds1, Mode=OneWay}"
+                             Style="{StaticResource SelectedItemsBox}" />
                 </UniformGrid>
-                <TextBox Text="{Binding RoadLineElemIds1, Mode=OneWay}"
-                         Style="{StaticResource SelectedItemsBox}" />
+                <UniformGrid Columns="2" Margin="0,5">
+                    <UniformGrid Rows="2">
+                        <TextBlock Text="Линия на поверхности 2"
+                                   Style="{StaticResource TextAboveButton}" />
+                        <Button Style="{StaticResource SelectButton}"
+                                Command="{Binding GetRoadLine2Command}" />
+                    </UniformGrid>
+                    <TextBox Text="{Binding RoadLineElemIds2, Mode=OneWay}"
+                             Style="{StaticResource SelectedItemsBox}" />
+                </UniformGrid>
             </UniformGrid>
         </GroupBox>
         <GroupBox Header="Адаптация профиля под уклон">
