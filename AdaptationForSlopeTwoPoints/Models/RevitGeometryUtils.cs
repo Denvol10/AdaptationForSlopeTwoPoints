@@ -37,6 +37,10 @@ namespace AdaptationForSlopeTwoPoints.Models
         public static XYZ GetIntersectPoint(Document doc ,FamilyInstance profile, IEnumerable<Line> roadLines)
         {
             Plane plane = GetPlanesByAdaptiveProfile(doc, profile);
+            if (plane.XVec.Z == -1 || plane.XVec.Z == 1)
+            {
+                plane = Plane.CreateByOriginAndBasis(plane.Origin, plane.YVec, plane.XVec);
+            }
             Line intersectLine = GetIntersectCurve(roadLines, plane);
             XYZ intersectPoint = LinePlaneIntersection(intersectLine, plane, out _);
 
