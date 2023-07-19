@@ -155,6 +155,7 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
         {
             Properties.Settings.Default["AdaptiveProfileElemIds"] = AdaptiveProfileElemIds;
             Properties.Settings.Default["RoadLineElemIds1"] = RoadLineElemIds1;
+            Properties.Settings.Default["RoadLineElemIds2"] = RoadLineElemIds2;
             Properties.Settings.Default.Save();
         }
 
@@ -183,6 +184,18 @@ namespace AdaptationForSlopeTwoPoints.ViewModels
                 {
                     RoadLineElemIds1 = roadLine1InSettings;
                     RevitModel.GetRoadLine1BySettings(roadLine1InSettings);
+                }
+            }
+            #endregion
+
+            #region Инициализация значения элементам линии 2 на поверхности из Settings
+            if (!(Properties.Settings.Default["RoadLineElemIds2"] is null))
+            {
+                string roadLine2InSettings = Properties.Settings.Default["RoadLineElemIds2"].ToString();
+                if(RevitModel.IsLinesExistInModel(roadLine2InSettings) && !string.IsNullOrEmpty(roadLine2InSettings))
+                {
+                    RoadLineElemIds2 = roadLine2InSettings;
+                    RevitModel.GetRoadLine2BySettings(roadLine2InSettings);
                 }
             }
             #endregion

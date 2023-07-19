@@ -89,7 +89,7 @@ namespace AdaptationForSlopeTwoPoints
         }
         #endregion
 
-        #region Получение линии на поверхности из settings
+        #region Получение линии 1 на поверхности из settings
         public void GetRoadLine1BySettings(string elemIdsInSettings)
         {
             var elemIds = RevitGeometryUtils.GetIdsByString(elemIdsInSettings);
@@ -110,6 +110,14 @@ namespace AdaptationForSlopeTwoPoints
         public void GetRoadLine2()
         {
             RoadLines2 = RevitGeometryUtils.GetRoadLines(Uiapp, out _roadLineElemIds2);
+        }
+        #endregion
+
+        #region Получение линии 2 на поверхности из settings
+        public void GetRoadLine2BySettings(string elemIdsInSettings)
+        {
+            var elemIds = RevitGeometryUtils.GetIdsByString(elemIdsInSettings);
+            RoadLines2 = RevitGeometryUtils.GetCurvesById(Doc, elemIds).OfType<Line>().ToList();
         }
         #endregion
 
