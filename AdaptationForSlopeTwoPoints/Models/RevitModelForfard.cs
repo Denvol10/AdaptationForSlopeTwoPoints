@@ -47,6 +47,32 @@ namespace AdaptationForSlopeTwoPoints
 
         #endregion
 
+        #region Проверка на то существуют профили в модели
+        public bool IsFamilyInstancesExistInModel(string elemIdsInSettings)
+        {
+            var elemIds = RevitGeometryUtils.GetIdsByString(elemIdsInSettings);
+
+            return RevitGeometryUtils.IsElemsExistInModel(Doc, elemIds, typeof(FamilyInstance));
+        }
+        #endregion
+
+        #region Проверка на то существуют линии поверхности дороги в модели
+        public bool IsLinesExistInModel(string elemIdsInSettings)
+        {
+            var elemIds = RevitGeometryUtils.GetIdsByString(elemIdsInSettings);
+
+            return RevitGeometryUtils.IsElemsExistInModel(Doc, elemIds, typeof(DirectShape));
+        }
+        #endregion
+
+        #region Получение профилей из settings
+        public void GetFamilyInstancesBySettings(string elemIdsInSettings)
+        {
+            var elemIds = RevitGeometryUtils.GetIdsByString(elemIdsInSettings);
+            AdaptiveProfiles = RevitGeometryUtils.GetFamilyInstancesById(Doc, elemIds);
+        }
+        #endregion
+
         #region Линия на поверхности 1
         public List<Line> RoadLines1 { get; set; }
 
